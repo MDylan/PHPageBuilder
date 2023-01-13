@@ -29,7 +29,7 @@ class DB
             $config['driver'] . ':host=' . $config['host'] . ';dbname=' . $config['database'] . ";options='--client_encoding=" . $config['charset'] . "'",
             $config['username'],
             $config['password'],
-            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT]
         );
         $this->pdo->exec("set names " . $config['charset']);
     }
